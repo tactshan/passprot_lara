@@ -23,5 +23,7 @@ $router->get('register/passprot_register','LoginController@registerView');
 
 //注册数据提交
 $router->post('/register/reg_data','LoginController@disposeRegister');
+//处理登录数据
+$router->post('/login/login_data','LoginController@disposeLogin');
 
 

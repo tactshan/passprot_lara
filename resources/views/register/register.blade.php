@@ -23,7 +23,7 @@
             <label for="inputPassword2" >确认密码</label>
             <input type="password" name="u_pass2" id="inputPassword2" style="width: 500px;"  class="form-control" placeholder="***" required>
             <button type="submit" class="btn btn-info">注册</button>
-            <a href="http://www.vm_passprot.com/login/passprot_login"><button type="button" class="btn btn-success">去登陆</button></a>
+            <a href="http://passprot.tactshan.com/login/passprot_login"><button type="button" class="btn btn-success">去登陆</button></a>
         </form>
     </div>
 </body>

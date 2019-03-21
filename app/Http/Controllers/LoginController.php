@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Model\LoginModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class LoginController extends Controller
 {
+    public $redis_h_u_key = 'h:user_token_u:';
     /**
      * 登录视图
      */
@@ -47,5 +49,36 @@ class LoginController extends Controller
             echo '注册成功！跳转中。。。。。。';
             header("refresh:2;url='http://www.vm_passprot.com/login/passprot_login'");
         }
+    }
+
+    /**
+     *处理登录数据
+     */
+    public function disposeLogin()
+    {
+        $email = $_POST['u_email'];
+        $pwd = $_POST['u_pass'];
+        $where=[
+            'email'=>$email,
+            'pwd'=>$pwd
+        ];
+        $data=LoginModel::where($where)->first();
+        if(empty($data)){
+            echo '账号或密码错误';
+            header("refresh:2;url='http://www.vm_passprot.com/login/passprot_login'");
+        }
+        //登陆成功验证用户信息
+        $uid = $data->uid;
+        $str = time().$uid.mt_rand(1111,9999);
+        $token=substr(md5($str),10,20);
+
+        //保存到redis中
+        $key = $this->redis_h_u_key.$uid;
+        $res = Redis::hSet($key,'token',$token);
+        if($res){
+            Redis::expire($key,3600*24*7);
+            echo '登录成功！token:'.$token;
+        }
+
     }
 }
