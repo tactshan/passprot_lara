@@ -14,8 +14,9 @@ class LoginController extends Controller
      */
     public function loginView()
     {
+        $url = empty($_GET['url']?"":$_GET['url']);
         $data=[
-          'url'=>$_GET['url']
+            'url'=>$url
         ];
         return view('login.login',$data);
     }
