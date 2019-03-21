@@ -56,6 +56,7 @@ class LoginController extends Controller
      */
     public function disposeLogin()
     {
+        $url = $_GET['url'];
         $email = $_POST['u_email'];
         $pwd = $_POST['u_pass'];
         $where=[
@@ -79,7 +80,8 @@ class LoginController extends Controller
         setcookie('token',$token,time()+86400,'/','tactshan.com',false,true);
         if($res){
             Redis::expire($key,3600*24*7);
-            echo '登录成功！token:'.$token;
+            echo '登录成功！';
+            header("refresh:2;url='$url'");exit;
         }
     }
 }
