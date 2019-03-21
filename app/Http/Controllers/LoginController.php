@@ -47,7 +47,7 @@ class LoginController extends Controller
         $uid = LoginModel::insertGetId($data);
         if($uid){
             echo '注册成功！跳转中。。。。。。';
-            header("refresh:2;url='http://www.vm_passprot.com/login/passprot_login'");
+            header("refresh:2;url='http://passprot.tactshan.com/login/passprot_login'");
         }
     }
 
@@ -65,7 +65,7 @@ class LoginController extends Controller
         $data=LoginModel::where($where)->first();
         if(empty($data)){
             echo '账号或密码错误';
-            header("refresh:2;url='http://www.vm_passprot.com/login/passprot_login'");exit;
+            header("refresh:2;url='http://passprot.tactshan.com/login/passprot_login'");exit;
         }
         //登陆成功验证用户信息
         $uid = $data->uid;
@@ -79,6 +79,5 @@ class LoginController extends Controller
             Redis::expire($key,3600*24*7);
             echo '登录成功！token:'.$token;
         }
-
     }
 }
