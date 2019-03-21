@@ -65,7 +65,7 @@ class LoginController extends Controller
         $data=LoginModel::where($where)->first();
         if(empty($data)){
             echo '账号或密码错误';
-            header("refresh:2;url='http://www.vm_passprot.com/login/passprot_login'");
+            header("refresh:2;url='http://www.vm_passprot.com/login/passprot_login'");exit;
         }
         //登陆成功验证用户信息
         $uid = $data->uid;

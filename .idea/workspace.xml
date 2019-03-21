@@ -83,13 +83,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="1201" />
+          <entry key="php" value="1206" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="471" />
-          <entry key="PHP" value="730" />
+          <entry key="PHP" value="735" />
         </counts>
       </usages-collector>
     </session>
@@ -114,12 +114,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1197">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="36" />
+            <state relative-caret-position="228">
+              <caret line="67" column="91" selection-start-line="67" selection-start-column="91" selection-end-line="67" selection-end-column="91" />
               <folding>
+                <element signature="e#40#65#0#PHP" expanded="true" />
                 <element signature="e#141#199#0#PHP" />
                 <element signature="e#230#253#0#PHP" />
                 <element signature="e#254#305#0#PHP" />
@@ -145,7 +146,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/login/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -195,10 +196,10 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Model/LoginModel.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/resources/views/register/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" />
       </list>
     </option>
   </component>
@@ -438,12 +439,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553135795705</updated>
-      <workItem from="1553135798727" duration="5886000" />
+      <workItem from="1553135798727" duration="6123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5886000" />
+    <option name="totallyTimeSpent" value="6123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -548,19 +549,6 @@
     <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1197">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="36" />
-          <folding>
-            <element signature="e#141#199#0#PHP" />
-            <element signature="e#230#253#0#PHP" />
-            <element signature="e#254#305#0#PHP" />
-            <element signature="e#348#373#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/register/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -583,6 +571,20 @@
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="67" column="91" selection-start-line="67" selection-start-column="91" selection-end-line="67" selection-end-column="91" />
+          <folding>
+            <element signature="e#40#65#0#PHP" expanded="true" />
+            <element signature="e#141#199#0#PHP" />
+            <element signature="e#230#253#0#PHP" />
+            <element signature="e#254#305#0#PHP" />
+            <element signature="e#348#373#0#PHP" />
           </folding>
         </state>
       </provider>
