@@ -14,7 +14,10 @@ class LoginController extends Controller
      */
     public function loginView()
     {
-        return view('login.login');
+        $data=[
+          'url'=>$_GET['url']
+        ];
+        return view('login.login',$data);
     }
 
     /**
@@ -56,7 +59,7 @@ class LoginController extends Controller
      */
     public function disposeLogin()
     {
-        $url = $_GET['url'];
+        $url = $_POST['request_url'];
         $email = $_POST['u_email'];
         $pwd = $_POST['u_pass'];
         $where=[
