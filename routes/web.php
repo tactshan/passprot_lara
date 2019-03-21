@@ -13,4 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
+
 });
+
+$router->get('login/passprot_login','LoginController@loginView');
+
