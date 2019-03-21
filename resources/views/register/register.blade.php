@@ -8,9 +8,9 @@
     <title></title>
 </head>
 <body>
-<form class="form-signin">
     <div >
-        <form class="form-signin">
+        <form class="form-signin" method="post" action="/register/reg_data">
+            {{csrf_field()}}
             <h2 class="form-signin-heading">Register</h2>
             <label for="inputNickName">昵称</label>
             <input type="text" name="nick_name" id="inputNickName" style="width: 500px;" class="form-control" placeholder="nickname" required autofocus>
@@ -22,10 +22,8 @@
             <input type="password" name="u_pass" id="inputPassword" style="width: 500px;" class="form-control" placeholder="***" required>
             <label for="inputPassword2" >确认密码</label>
             <input type="password" name="u_pass2" id="inputPassword2" style="width: 500px;"  class="form-control" placeholder="***" required>
-            <button type="button" class="btn btn-info">注册</button>
+            <button type="submit" class="btn btn-info">注册</button>
             <a href="http://www.vm_passprot.com/login/passprot_login"><button type="button" class="btn btn-success">去登陆</button></a>
         </form>
-
     </div>
-</form>
 </body>
