@@ -13,4 +13,12 @@ class LoginController extends Controller
     {
         return view('login.login');
     }
+
+    /**
+     * 注册视图
+     */
+    public function registerView()
+    {
+        return view('register.register');
+    }
 }

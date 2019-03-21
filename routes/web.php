@@ -16,5 +16,8 @@ Route::get('/', function () {
 
 });
 
+//登录视图
 $router->get('login/passprot_login','LoginController@loginView');
+//注册视图
+$router->get('register/passprot_register','LoginController@registerView');
 

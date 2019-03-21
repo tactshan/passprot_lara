@@ -10,7 +10,7 @@
 <body>
 <form class="form-signin">
     <div align="center">
-        <h2 class="form-signin-heading">请登录</h2>
+        <h2 class="form-signin-heading">请登录 <h5><a href="http://www.vm_passprot.com/register/passprot_register">注册</a></h5></h2>
         <label for="inputEmail">Email</label>
         <input type="email" name="u_email" id="inputEmail" style="width: 200px;" class="form-control" required autofocus>
         <label for="inputPassword" >Password</label>
