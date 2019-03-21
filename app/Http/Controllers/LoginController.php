@@ -75,6 +75,8 @@ class LoginController extends Controller
         //保存到redis中
         $key = $this->redis_h_u_key.$uid;
         $res = Redis::hSet($key,'token',$token);
+        setcookie('uid',$uid,time()+86400,'/','tactshan.com',false,true);
+        setcookie('token',$token,time()+86400,'/','tactshan.com',false,true);
         if($res){
             Redis::expire($key,3600*24*7);
             echo '登录成功！token:'.$token;
