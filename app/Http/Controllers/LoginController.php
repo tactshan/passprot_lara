@@ -70,7 +70,7 @@ class LoginController extends Controller
         $data=LoginModel::where($where)->first();
         if(empty($data)){
             echo '账号或密码错误';
-            header("refresh:2;url='http://passprot.tactshan.com/login/passprot_login'");exit;
+            header("refresh:2;url='http://passprot.tactshan.com/login/passprot_login?url=$url'");exit;
         }
         //登陆成功验证用户信息
         $uid = $data->uid;
