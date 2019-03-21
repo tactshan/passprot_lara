@@ -82,7 +82,7 @@ class LoginController extends Controller
         $res = Redis::hSet($key,'token',$token);
         setcookie('uid',$uid,time()+86400,'/','tactshan.com',false,true);
         setcookie('token',$token,time()+86400,'/','tactshan.com',false,true);
-        if($res){
+        if($res!==false){
             Redis::expire($key,3600*24*7);
             echo '登录成功！';
             header("refresh:2;url='$url'");exit;
