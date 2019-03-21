@@ -13,6 +13,7 @@
     <div align="center">
         <input type="hidden" name="request_url" value="{{$url}}">
         <h2 class="form-signin-heading">请登录 <h5><a href="http://passprot.tactshan.com/register/passprot_register">注册</a></h5></h2>
+        <a href="{{$url}}">{{$url}}</a>
         <label for="inputEmail">Email</label>
         <input type="email" name="u_email" id="inputEmail" style="width: 200px;" class="form-control" required autofocus>
         <label for="inputPassword" >Password</label>
