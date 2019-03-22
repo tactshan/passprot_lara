@@ -88,4 +88,12 @@ class LoginController extends Controller
             header("refresh:2;url='$url'");exit;
         }
     }
+
+    /**
+     * 授权手机api登录
+     */
+    public function phoneApiLogin()
+    {
+        echo json_encode($_POST);die;
+    }
 }
