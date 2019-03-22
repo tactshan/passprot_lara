@@ -95,6 +95,7 @@ class LoginController extends Controller
      */
     public function phoneApiLogin()
     {
+        echo json_encode($_POST);die;
         $email = $_POST['u_email'];
         $pwd = $_POST['u_pass'];
         $where=[
