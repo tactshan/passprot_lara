@@ -124,6 +124,7 @@ class LoginController extends Controller
             $msg=[
               'code'=>0,
               'msg'=>'登录成功',
+                'uid'=>$uid,
               'token'=>$token
             ];
             echo json_encode($msg);die;
