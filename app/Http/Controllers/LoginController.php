@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redis;
 class LoginController extends Controller
 {
     public $redis_h_u_key = 'h:user_token_u:';
+    public $phone_redis_h_u_key = 'h:phone_user_token_u:';
     /**
      * 登录视图
      */
@@ -94,6 +95,38 @@ class LoginController extends Controller
      */
     public function phoneApiLogin()
     {
-        echo json_encode($_POST);die;
+        $email = $_POST['u_email'];
+        $pwd = $_POST['u_pass'];
+        $where=[
+            'email'=>$email,
+            'pwd'=>$pwd
+        ];
+        $data=LoginModel::where($where)->first();
+        if(empty($data)){
+            $msg=[
+              'code'=>40001,
+              'msg'=>'账号或密码错误'
+            ];
+            echo json_encode($msg);die;
+        }
+        //登陆成功验证用户信息
+        $uid = $data->uid;
+        $str = time().$uid.mt_rand(1111,9999);
+        $token=substr(md5($str),10,20);
+
+        //保存到redis中
+        $key = $this->phone_redis_h_u_key.$uid;
+        $res = Redis::hSet($key,'token',$token);
+//        setcookie('uid',$uid,time()+86400,'/','tactshan.com',false,true);
+//        setcookie('token',$token,time()+86400,'/','tactshan.com',false,true);
+        if($res!==false){
+            Redis::expire($key,3600*24*7);
+            $msg=[
+              'code'=>0,
+              'msg'=>'登录成功',
+              'token'=>$token
+            ];
+            echo json_encode($msg);die;
+        }
     }
 }
