@@ -96,12 +96,11 @@ class LoginController extends Controller
     public function phoneApiLogin()
     {
         $email = $_POST['email'];
-        $pwd = $_POST['pass'];
+        $pwd = $_POST['pwd'];
         $where=[
             'email'=>$email,
             'pwd'=>$pwd
         ];
-        var_dump($where);die;
         $data=LoginModel::where($where)->first();
         if(empty($data)){
             $msg=[
