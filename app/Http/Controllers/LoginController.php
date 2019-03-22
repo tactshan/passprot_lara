@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Redis;
 
 class LoginController extends Controller
 {
-    public $redis_h_u_key = 'h:user_token_u:';
-    public $phone_redis_h_u_key = 'h:phone_user_token_u:';
+    public $redis_h_u_key = 'h:user_token_uid:';
     /**
      * 登录视图
      */
@@ -80,7 +79,7 @@ class LoginController extends Controller
 
         //保存到redis中
         $key = $this->redis_h_u_key.$uid;
-        $res = Redis::hSet($key,'token',$token);
+        $res = Redis::hSet($key,'web_token',$token);
         setcookie('uid',$uid,time()+86400,'/','tactshan.com',false,true);
         setcookie('token',$token,time()+86400,'/','tactshan.com',false,true);
         if($res!==false){
@@ -115,8 +114,8 @@ class LoginController extends Controller
         $token=substr(md5($str),10,20);
 
         //保存到redis中
-        $key = $this->phone_redis_h_u_key.$uid;
-        $res = Redis::hSet($key,'token',$token);
+        $key = $this->redis_h_u_key.$uid;
+        $res = Redis::hSet($key,'app_token',$token);
 //        setcookie('uid',$uid,time()+86400,'/','tactshan.com',false,true);
 //        setcookie('token',$token,time()+86400,'/','tactshan.com',false,true);
         if($res!==false){
