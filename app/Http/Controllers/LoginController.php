@@ -101,6 +101,7 @@ class LoginController extends Controller
             'email'=>$email,
             'pwd'=>$pwd
         ];
+        var_dump($where);die;
         $data=LoginModel::where($where)->first();
         if(empty($data)){
             $msg=[
